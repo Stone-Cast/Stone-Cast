@@ -1,5 +1,15 @@
-import Image from "next/image";
+import AboutPage from "@/components/AboutPage";
+import { Homepage } from "@/components/Homepage";
+import NavBar from "@/components/NavBar";
+import Skills from "@/components/Skills";
 
 export default function Home() {
-    return <div></div>;
+    return (
+        <main className="bg-[var(--custom-grey)]">
+            {/* <Homepage />
+            <NavBar />
+            <AboutPage /> */}
+            <Skills />
+        </main>
+    );
 }

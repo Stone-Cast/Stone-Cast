@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 export default function Typewriter() {
-    const words = ["DEVELOPER", "DESIGNER", "FREELANCER"];
+    const words = ["DEVELOPER", "DESIGNER", "FREELANCER", "COPYCAT"];
 
     const [index, setIndex] = useState(0); // which word
     const [subIndex, setSubIndex] = useState(0); // which character

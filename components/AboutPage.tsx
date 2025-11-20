@@ -4,21 +4,21 @@ import Underline from "./Underline";
 
 export default function AboutPage() {
     return (
-        <section id="About" className="bg-[var(--custom-grey)]">
+        <section id="About">
             <div
                 className={
                     roboto.className +
-                    " h-screen flex flex-col gap-5 items-center px-5 py-20 max-w-[1400px] mx-auto"
+                    " flex flex-col gap-5 md:items-center px-5 pt-5 pb-10 md:py-20 max-w-[1400px] mx-auto"
                 }
             >
                 <div className="flex flex-col items-center w-fit">
-                    <h1 className="text-4xl text-[var(--custom-cyan)]">
+                    <h1 className="text-2xl md:text-4xl text-[var(--custom-cyan)]">
                         About Me
                     </h1>
                     <Underline />
                 </div>
-                <div className="flex grow max-md:flex-col w-full text-white/80 z-10">
-                    <div className="md:w-1/2 group">
+                <div className="flex grow flex-col lg:flex-row w-full text-white/80 z-10">
+                    <div className="lg:w-1/2 group">
                         <div className="frame">
                             <span
                                 className={
@@ -33,7 +33,7 @@ export default function AboutPage() {
                                 src={"/picFrame.jpg"}
                                 height={300}
                                 width={300}
-                                className="rotate-20 duration-700 group-hover:rotate-0"
+                                className="rotate-10 md:rotate-20 duration-700 group-hover:rotate-0"
                             />
                             <div className="profilePic duration-700 translate-x-28 -translate-y-[60px] scale-130 perspective-[600px] group-hover:scale-99 group-hover:-translate-x-31 group-hover:-translate-y-27 group-hover:h-[80%]">
                                 <Image
@@ -45,7 +45,7 @@ export default function AboutPage() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col text-xl md:w-1/2 text-justify items-center justify-between md:py-10 md:px-25">
+                    <div className="flex flex-col text-xl lg:w-1/2 items-center md:py-10 md:px-15 lg:px-25 gap-y-10">
                         <div>
                             <p>Hi. I am Arun Karki.</p>
                             <br />
@@ -65,7 +65,7 @@ export default function AboutPage() {
                                 to download my resume below.
                             </p>
                         </div>
-                        <div className="relative p-3 cursor-pointer border">
+                        <div className="relative p-3 cursor-pointer">
                             <span className="absolute -top-1 left-0 inline-block h-1 w-full animate-[wiggle_1s_ease-in-out_infinite] bg-red-800"></span>
                             <span className="absolute top-0 -left-1 inline-block h-full w-1 bg-blue-800"></span>
                             <span className="absolute top-0 -right-1 inline-block h-full w-1 bg-green-800"></span>

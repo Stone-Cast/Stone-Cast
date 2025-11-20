@@ -37,7 +37,7 @@ export function Homepage() {
             </div>
             <a
                 href="#About"
-                className="absolute bottom-20 left-2/5 text-4xl text-[var(--custom-cyan)] animate-bounce z-10"
+                className="absolute bottom-5 md:bottom-20 left-1/2 -translate-x-1/2 md:left-2/5 text-4xl text-[var(--custom-cyan)] animate-bounce z-10"
             >
                 <FaChevronDown />
                 <FaChevronDown />

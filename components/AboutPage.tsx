@@ -8,7 +8,7 @@ export default function AboutPage() {
             <div
                 className={
                     roboto.className +
-                    " flex flex-col gap-5 md:items-center px-5 pt-5 pb-10 md:py-20 max-w-[1400px] mx-auto"
+                    " flex flex-col gap-5 md:items-center px-5 pt-5 pb-10 md:py-20 max-w-[1400px] border mx-auto"
                 }
             >
                 <div className="flex flex-col items-center w-fit">
@@ -17,8 +17,8 @@ export default function AboutPage() {
                     </h1>
                     <Underline />
                 </div>
-                <div className="flex grow flex-col lg:flex-row w-full text-white/80 z-10">
-                    <div className="lg:w-1/2 group">
+                <div className="flex grow flex-col xl:flex-row w-full justify-around items-stretch text-white/80 z-10">
+                    <div className=" xl:w-[600px] group border">
                         <div className="frame">
                             <span
                                 className={
@@ -45,7 +45,7 @@ export default function AboutPage() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col text-xl lg:w-1/2 items-center md:py-10 md:px-15 lg:px-25 gap-y-10">
+                    <div className=" flex flex-col text-xl border xl:w-[600px] items-center md:py-10 md:px-15 lg:px-25 gap-y-10">
                         <div>
                             <p>Hi. I am Arun Karki.</p>
                             <br />

@@ -1,4 +1,5 @@
 import AboutPage from "@/components/AboutPage";
+import Contacts from "@/components/Contacts";
 import { Homepage } from "@/components/Homepage";
 import NavBar from "@/components/NavBar";
 import Projects from "@/components/Projects";
@@ -12,6 +13,7 @@ export default function Home() {
             <AboutPage />
             <Skills />
             <Projects />
+            <Contacts />
         </main>
     );
 }

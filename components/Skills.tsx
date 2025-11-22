@@ -8,7 +8,7 @@ export default function Skills() {
             id="Skills"
             className={
                 roboto.className +
-                " relative h-screen flex flex-col gap-5 md:items-center px-5 pt-5 pb-10 md:py-20 bg-black mx-auto md:[clip-path:polygon(0_0,100%_0,100%_100%,0_60%)]"
+                " relative h-screen flex flex-col gap-5 md:items-center px-5 pt-5 pb-10 md:py-20 bg-black mx-auto lg:[clip-path:polygon(0_0,100%_0,100%_100%,0_60%)]"
             }
         >
             <div className="flex flex-col items-center w-fit">

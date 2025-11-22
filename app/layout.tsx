@@ -15,7 +15,7 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className="scroll-smooth max-w-[2000px] mx-auto select-none"
+            className="scroll-smooth max-w-[2000px] mx-auto select-none bg-[var(--custom-grey)]"
         >
             <body className={`${rc_light.className} antialiased`}>
                 {children}

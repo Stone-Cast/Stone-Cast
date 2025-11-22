@@ -2,6 +2,7 @@ import {
     Petit_Formal_Script,
     Roboto,
     Roboto_Condensed,
+    Story_Script,
 } from "next/font/google";
 
 export const rc_light = Roboto_Condensed({
@@ -20,6 +21,11 @@ export const roboto = Roboto({
 });
 
 export const petit = Petit_Formal_Script({
+    weight: "400",
+    subsets: ["latin"],
+});
+
+export const story_script = Story_Script({
     weight: "400",
     subsets: ["latin"],
 });

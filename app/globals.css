@@ -29,7 +29,6 @@ body {
 }
 
 @layer components {
-    /* not all tailwind classes can be applied with @apply */
     /* ------------Navigation Bar utility classes------------ */
     .nav {
         @apply sticky top-0 flex justify-end md:py-2 pr-10 gap-x-4 text-xl bg-black text-white max-w-[480px] transition-all duration-500;
@@ -61,12 +60,6 @@ body {
     }
 
     /* ------------About page utlity classes------------ */
-    .frame {
-        @apply relative transform w-fit mx-auto lg:mx-auto md:ml-32 my-15 md:my-25 -z-10 border;
-    }
-    .profilePic {
-        @apply absolute top-2/5 md:top-1/2 md:left-1/2 md:-translate-1/2 h-[80%] md:h-[85%] w-[60%] md:w-[82%] z-10;
-    }
 
     /* ------------Skills page utlity classes------------ */
 

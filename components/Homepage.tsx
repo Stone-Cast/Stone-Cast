@@ -24,7 +24,7 @@ export function Homepage() {
                 </h1>
                 <div>
                     <p className="text-3xl py-4">
-                        I AM A <Typewriter />
+                        {/* I AM A <Typewriter /> */}
                     </p>
                     <a
                         href="#Contacts"

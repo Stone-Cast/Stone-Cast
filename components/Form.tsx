@@ -1,31 +1,77 @@
+"use client";
+
 import { handleSubmit } from "@/app/actions";
 import { story_script } from "@/app/fonts";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { IoPaperPlane } from "react-icons/io5";
 
 export default function Form() {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const formContainerRef = useRef<HTMLDivElement>(null);
+
+    // Handle clicks outside the form
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (
+                formContainerRef.current &&
+                !formContainerRef.current.contains(event.target as Node)
+            ) {
+                setIsExpanded(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
     return (
-        <div className="relative mx-auto w-full md:w-[560px] group">
+        <div
+            ref={formContainerRef}
+            className="relative mx-auto w-full max-w-[560px] my-auto"
+            onMouseEnter={() => setIsExpanded(true)}
+            onMouseLeave={() => {
+                // Check if any input inside the form is focused
+                const formElement =
+                    formContainerRef.current?.querySelector("form");
+                const hasFocusedInput = formElement?.contains(
+                    document.activeElement
+                );
+
+                if (!hasFocusedInput) {
+                    setIsExpanded(false);
+                }
+            }}
+        >
             <Image
                 src={"/letter-before.png"}
-                alt="letter's cover. cover letter? ahaha!"
+                alt="letter's cover."
                 width={100}
                 height={100}
-                className="max-md:hidden absolute bottom-35 left-1/2 -translate-x-1/2 w-[102%] max-w-[560px] pointer-events-none"
+                className=" absolute bottom-35 left-1/2 -translate-x-1/2 w-[102%] max-w-[560px] pointer-events-none"
             />
             <Image
                 src={"/letter-after.png"}
                 alt="letter's cover. cover letter? ahaha!"
                 width={300}
                 height={100}
-                className="max-md:hidden absolute -bottom-3 left-1/2 -translate-x-1/2 w-[102%] max-w-[590px] z-30 rounded-bl-2xl rounded-br-2xl pointer-events-none"
+                className=" absolute -bottom-3 left-1/2 -translate-x-1/2 w-[102%] max-w-[590px] z-30 rounded-bl-2xl rounded-br-2xl pointer-events-none"
             />
             <form
                 action={handleSubmit}
-                className="relative max-w-[560px] flex flex-col mx-auto gap-y-4 p-5 md:p-10 rounded-lg w-full bg-white transition-all duration-1000 md:h-[330px] lg:group-hover:h-[610px] z-20 overflow-hidden"
+                className={`relative max-w-[560px] flex flex-col mx-auto gap-y-4 p-5 md:p-10 rounded-lg w-full bg-white transition-all duration-1000 z-20 overflow-hidden ${
+                    isExpanded
+                        ? "h-[525px] md:h-[610px]"
+                        : "h-[290px] md:h-[330px]"
+                }`}
             >
                 <span
-                    className={story_script.className + " text-3xl uppercase"}
+                    className={
+                        story_script.className +
+                        " text-2xl md:text-3xl uppercase"
+                    }
                 >
                     Hey Arun,
                 </span>
@@ -37,10 +83,14 @@ export default function Form() {
                         name="message"
                         placeholder="Type your message here..."
                         className="p-2 rounded-lg max-md:w-full md:grow border border-dashed"
+                        onFocus={() => setIsExpanded(true)}
                     />
                 </div>
                 <span
-                    className={story_script.className + " text-3xl uppercase "}
+                    className={
+                        story_script.className +
+                        " text-2xl md:text-3xl uppercase "
+                    }
                 >
                     Best Regards,
                 </span>
@@ -50,6 +100,7 @@ export default function Form() {
                         type="text"
                         name="name"
                         className="p-4 rounded-3xl max-md:w-full md:grow border border-dashed"
+                        onFocus={() => setIsExpanded(true)}
                         required
                     />
                 </div>
@@ -59,6 +110,7 @@ export default function Form() {
                         type="email"
                         name="email"
                         className="p-4 rounded-3xl max-md:w-full md:grow border border-dashed"
+                        onFocus={() => setIsExpanded(true)}
                         required
                     />
                 </div>

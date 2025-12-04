@@ -1,32 +1,22 @@
 "use client";
 
-import React, { useRef, useMemo, useState } from "react";
+import { useRef, useMemo, useState, useEffect } from "react";
 import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 
 // ============ CONFIGURATION ============
 const CONFIG = {
-    // Sphere settings
-    sphereRadius: 3.5, // Size of the sphere (larger = bigger)
-
-    // Logo settings
-    logoSize: 1, // Size of each logo sprite
-
-    // Rotation settings
     rotationSpeedY: 0.003, // Horizontal rotation speed
     rotationSpeedX: 0.003, // Vertical rotation speed
 
-    // Drag settings
     dragDamping: 0.95, // How quickly drag momentum fades (0.9-0.99)
     dragSensitivity: 0.008, // How responsive to mouse movement
 
-    // Camera settings
     cameraDistance: 10, // How far the camera is from the sphere
     cameraFOV: 50, // Field of view
 };
 
-// ============ ADD/REMOVE YOUR TECH LOGOS HERE ============
-// Just add or remove items from this array - the sphere adjusts automatically!
+// ============ ADD/REMOVE TECH LOGOS HERE ============
 const techLogos = [
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
@@ -51,6 +41,9 @@ function TechSphere() {
     const groupRef = useRef<THREE.Group>(null!);
     const logoCount = techLogos.length;
 
+    const [sphereRadius, setSphereRadius] = useState<number>(3.5);
+    const [logoSize, setLogoSize] = useState<number>(1);
+
     // Drag state
     const [isDragging, setIsDragging] = useState(false);
     const [velocity, setVelocity] = useState({ x: 0, y: 0 });
@@ -60,6 +53,27 @@ function TechSphere() {
 
     // Load textures
     const textures = useLoader(THREE.TextureLoader, techLogos);
+
+    useEffect(() => {
+        const updateSphereRadius = () => {
+            const width = window.innerWidth;
+            if (width < 760) {
+                setSphereRadius(3);
+                setLogoSize(0.8);
+            } else if (width < 1024) {
+                setSphereRadius(2.7);
+                setLogoSize(0.7);
+            } else {
+                setSphereRadius(3);
+                setLogoSize(0.9);
+            }
+        };
+
+        updateSphereRadius();
+        window.addEventListener("resize", updateSphereRadius);
+
+        return () => window.removeEventListener("resize", updateSphereRadius);
+    }, []);
 
     // Calculate positions using Fibonacci sphere algorithm
     const logoPositions = useMemo(() => {
@@ -72,17 +86,15 @@ function TechSphere() {
             const inclination = Math.acos(1 - 2 * t);
             const azimuth = angleIncrement * i;
 
-            const x =
-                CONFIG.sphereRadius * Math.sin(inclination) * Math.cos(azimuth);
-            const y =
-                CONFIG.sphereRadius * Math.sin(inclination) * Math.sin(azimuth);
-            const z = CONFIG.sphereRadius * Math.cos(inclination);
+            const x = sphereRadius * Math.sin(inclination) * Math.cos(azimuth);
+            const y = sphereRadius * Math.sin(inclination) * Math.sin(azimuth);
+            const z = sphereRadius * Math.cos(inclination);
 
             positions.push(new THREE.Vector3(x, y, z));
         }
 
         return positions;
-    }, [logoCount]);
+    }, [logoCount, sphereRadius]);
 
     // Handle mouse events
     const handlePointerDown = (e: MouseEvent) => {
@@ -111,7 +123,7 @@ function TechSphere() {
     };
 
     // Set up event listeners
-    React.useEffect(() => {
+    useEffect(() => {
         const canvas = gl.domElement;
         canvas.style.cursor = "grab";
 
@@ -153,7 +165,7 @@ function TechSphere() {
                 <sprite
                     key={idx}
                     position={position}
-                    scale={[CONFIG.logoSize, CONFIG.logoSize, 1]}
+                    scale={[logoSize, logoSize, 1]}
                 >
                     <spriteMaterial
                         map={textures[idx]}

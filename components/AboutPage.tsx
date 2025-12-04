@@ -5,11 +5,11 @@ import Link from "next/link";
 
 export default function AboutPage() {
     return (
-        <section id="About">
+        <section id="About" className="sectionEndLine relative overflow-x-clip">
             <div
                 className={
                     roboto.className +
-                    " flex flex-col gap-5 md:items-center px-5 pt-5 pb-10 md:py-20 max-w-[1400px] mx-auto"
+                    " flex flex-col gap-5 md:items-center px-5 pt-5 pb-10 md:py-20 max-w-[1400px] mx-auto "
                 }
             >
                 <div className="flex flex-col items-center w-fit">
@@ -23,10 +23,10 @@ export default function AboutPage() {
                     </h1>
                     <Underline />
                 </div>
-                <div className="flex flex-col lg:flex-row w-full justify-around text-white/80">
+                <div className="flex flex-col lg:flex-row justify-around text-white/80">
                     <AnimatedProfileImage />
 
-                    <div className="flex flex-col gap-12 items-center lg:w-1/2 text-lg md:text-xl p-5 md:px-10 lg:px-15 lg:py-10 xl:px-25 xl:py-10 xl:text-2xl">
+                    <div className="flex flex-col gap-12 items-center lg:w-1/2 info">
                         <div>
                             Hi. I am Arun Karki. <br />
                             <br />
@@ -58,6 +58,40 @@ export default function AboutPage() {
                     </div>
                 </div>
             </div>
+            <svg
+                className="hidden lg:block absolute bottom-0 left-0 w-full h-full pointer-events-none"
+                preserveAspectRatio="none"
+                viewBox="0 0 100 100"
+            >
+                <defs>
+                    <filter
+                        id="glowFilter"
+                        x="-50%"
+                        y="-50%"
+                        width="200%"
+                        height="200%"
+                    >
+                        <feGaussianBlur
+                            in="SourceGraphic"
+                            stdDeviation="0.9"
+                            result="blur1"
+                        />
+                        <feMerge>
+                            <feMergeNode in="blur1" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                </defs>
+                <line
+                    x1="0"
+                    y1="99"
+                    x2="100"
+                    y2="74"
+                    stroke="rgb(1,247,247)"
+                    strokeWidth="0.4"
+                    filter="url(#glowFilter)"
+                />
+            </svg>
         </section>
     );
 }

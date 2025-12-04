@@ -30,7 +30,7 @@ export default function Form() {
     return (
         <div
             ref={formContainerRef}
-            className="relative mx-auto w-full max-w-[560px] my-auto"
+            className="relative md:top-[120px] mx-auto w-full md:w-[450px] xl:w-full max-w-[520px] my-auto"
             onMouseEnter={() => setIsExpanded(true)}
             onMouseLeave={() => {
                 // Check if any input inside the form is focused
@@ -50,27 +50,27 @@ export default function Form() {
                 alt="letter's cover."
                 width={100}
                 height={100}
-                className=" absolute bottom-35 left-1/2 -translate-x-1/2 w-[102%] max-w-[560px] pointer-events-none"
+                className=" absolute bottom-35 left-1/2 -translate-x-1/2 w-[102%] max-w-[520px] pointer-events-none"
             />
             <Image
                 src={"/letter-after.png"}
                 alt="letter's cover. cover letter? ahaha!"
                 width={300}
                 height={100}
-                className=" absolute -bottom-3 left-1/2 -translate-x-1/2 w-[102%] max-w-[590px] z-30 rounded-bl-2xl rounded-br-2xl pointer-events-none"
+                className=" absolute -bottom-3 left-1/2 -translate-x-1/2 w-[102%] max-w-[535px] z-30 rounded-bl-2xl rounded-br-2xl pointer-events-none"
             />
             <form
                 action={handleSubmit}
-                className={`relative max-w-[560px] flex flex-col mx-auto gap-y-4 p-5 md:p-10 rounded-lg w-full bg-white transition-all duration-1000 z-20 overflow-hidden ${
+                className={`relative max-w-[560px] flex flex-col mx-auto gap-y-4 p-5 md:p-7 xl:p-10 rounded-lg w-full bg-white transition-all duration-1000 z-20 overflow-hidden ${
                     isExpanded
-                        ? "h-[525px] md:h-[610px]"
+                        ? "h-[520px] md:h-[560px] xl:h-[600px]"
                         : "h-[290px] md:h-[330px]"
                 }`}
             >
                 <span
                     className={
                         story_script.className +
-                        " text-2xl md:text-3xl uppercase"
+                        " text-2xl lg:text-3xl uppercase"
                     }
                 >
                     Hey Arun,
@@ -89,7 +89,7 @@ export default function Form() {
                 <span
                     className={
                         story_script.className +
-                        " text-2xl md:text-3xl uppercase "
+                        " text-2xl lg:text-3xl uppercase "
                     }
                 >
                     Best Regards,

@@ -1,5 +1,6 @@
 import { roboto } from "@/app/fonts";
 import Underline from "./Underline";
+import Carousel from "./Carousel";
 
 export default function Projects() {
     return (
@@ -19,6 +20,7 @@ export default function Projects() {
                     </h1>
                     <Underline />
                 </div>
+                <Carousel />
             </div>
             <svg
                 className="hidden lg:block absolute bottom-0 left-0 w-full h-full pointer-events-none z-10"

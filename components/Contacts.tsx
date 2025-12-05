@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Underline from "./Underline";
 import Form from "./Form";
 
 export default function Contacts() {

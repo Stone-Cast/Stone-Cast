@@ -97,5 +97,18 @@ body {
         @apply content-[''] absolute right-5 -bottom-5 lg:-top-15 h-[60px] w-[60px] bg-white/10 rounded-lg -z-10 animate-custom-vertical;
     }
 
+    .visitButton::before {
+        @apply content-[''] absolute h-full w-1/2 rounded-tl-xl rounded-bl-xl -left-2/3 top-1/2 -translate-y-1/2 border-l-3 border-t-3 border-b-3 border-[var(--custom-cyan)] duration-600;
+    }
+    .visitButton::after {
+        @apply content-[''] absolute h-full w-1/2 rounded-tr-xl rounded-br-xl -right-2/3 top-1/2 -translate-y-1/2 border-r-3 border-t-3 border-b-3 border-[var(--custom-cyan)] duration-600;
+    }
+    .visitButton:hover::before {
+        @apply left-0;
+    }
+    .visitButton:hover::after {
+        @apply right-0;
+    }
+
     /* ------------Contacts page utlity classes------------ */
 }

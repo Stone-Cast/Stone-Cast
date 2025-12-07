@@ -1,6 +1,6 @@
 "use client";
 
-import { handleSubmit } from "@/app/actions";
+import { SendEmails } from "@/app/actions";
 import { story_script } from "@/app/fonts";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -26,6 +26,11 @@ export default function Form() {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
+
+    async function handleSubmit(e: FormData) {
+        await SendEmails(e);
+        alert("Message sent.");
+    }
 
     return (
         <div

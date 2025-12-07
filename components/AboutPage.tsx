@@ -5,11 +5,14 @@ import Link from "next/link";
 
 export default function AboutPage() {
     return (
-        <section id="About" className="sectionEndLine relative overflow-x-clip">
+        <section
+            id="About"
+            className="relative sectionEndLine lg:-mt-[54px] overflow-x-clip z-20 bg-[var(--custom-grey)]"
+        >
             <div
                 className={
                     roboto.className +
-                    " flex flex-col gap-5 md:items-center px-5 pt-5 pb-10 md:py-20 max-w-[1400px] mx-auto "
+                    " flex flex-col gap-5 md:items-center px-5 pt-5 pb-10 md:py-15 lg:py-20 max-w-[1400px] mx-auto "
                 }
             >
                 <div className="flex flex-col items-center w-fit">
@@ -59,7 +62,7 @@ export default function AboutPage() {
                 </div>
             </div>
             <svg
-                className="hidden lg:block absolute bottom-0 left-0 w-full h-full pointer-events-none"
+                className="hidden md:block absolute bottom-0 left-0 w-full h-full pointer-events-none"
                 preserveAspectRatio="none"
                 viewBox="0 0 100 100"
             >

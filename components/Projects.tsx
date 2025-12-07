@@ -6,7 +6,7 @@ export default function Projects() {
     return (
         <section
             id="Projects"
-            className="projects relative bg-[url('../public/homepageBg.jpg')] bg-no-repeat bg-cover bg-fixed bg-center lg:[clip-path:polygon(0_0,100%_30%,100%_100%,0_100%)] lg:-top-25 lg:-scroll-mt-30 overflow-x-clip"
+            className="projects relative bg-[url('../public/homepageBg.jpg')] bg-no-repeat bg-cover bg-fixed bg-center md:-mt-[208px] lg:-scroll-mt-30 overflow-x-clip z-10"
         >
             <div
                 className={
@@ -24,40 +24,6 @@ export default function Projects() {
                     <Carousel />
                 </div>
             </div>
-            <svg
-                className="hidden lg:block absolute bottom-0 left-0 w-full h-full pointer-events-none z-10"
-                preserveAspectRatio="none"
-                viewBox="0 0 100 100"
-            >
-                <defs>
-                    <filter
-                        id="glowFilter"
-                        x="-50%"
-                        y="-50%"
-                        width="200%"
-                        height="200%"
-                    >
-                        <feGaussianBlur
-                            in="SourceGraphic"
-                            stdDeviation="0.9"
-                            result="blur1"
-                        />
-                        <feMerge>
-                            <feMergeNode in="blur1" />
-                            <feMergeNode in="SourceGraphic" />
-                        </feMerge>
-                    </filter>
-                </defs>
-                <line
-                    x1="0"
-                    y1="0.2"
-                    x2="100"
-                    y2="30.2"
-                    stroke="rgb(1,247,247)"
-                    strokeWidth="0.4"
-                    filter="url(#glowFilter)"
-                />
-            </svg>
         </section>
     );
 }

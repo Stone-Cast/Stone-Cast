@@ -6,12 +6,12 @@ export default function Skills() {
     return (
         <section
             id="Skills"
-            className="sectionEndLine relative overflow-x-clip"
+            className="relative sectionEndLine overflow-x-clip md:[clip-path:polygon(0_0,100%_0,100%_100%,0_75%)] pt-5 md:py-20 bg-[var(--custom-grey)] z-20 "
         >
             <div
                 className={
                     roboto.className +
-                    " flex flex-col gap-5 md:items-center px-5 pt-5 md:pt-20 max-w-[1400px] mx-auto"
+                    " flex flex-col gap-5 md:items-center px-5 max-w-[1400px] mx-auto"
                 }
             >
                 <div className="flex flex-col items-center w-fit">
@@ -38,6 +38,40 @@ export default function Skills() {
                     </div>
                 </div>
             </div>
+            <svg
+                className="hidden md:block absolute bottom-0 left-0 w-full h-full pointer-events-none z-10"
+                preserveAspectRatio="none"
+                viewBox="0 0 100 100"
+            >
+                <defs>
+                    <filter
+                        id="glowFilter"
+                        x="-50%"
+                        y="-50%"
+                        width="200%"
+                        height="200%"
+                    >
+                        <feGaussianBlur
+                            in="SourceGraphic"
+                            stdDeviation="0.9"
+                            result="blur1"
+                        />
+                        <feMerge>
+                            <feMergeNode in="blur1" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                </defs>
+                <line
+                    x1="0"
+                    y1="75"
+                    x2="100"
+                    y2="100"
+                    stroke="rgb(1,247,247)"
+                    strokeWidth="0.4"
+                    filter="url(#glowFilter)"
+                />
+            </svg>
         </section>
     );
 }

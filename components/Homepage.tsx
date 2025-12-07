@@ -6,7 +6,10 @@ import Link from "next/link";
 
 export function Homepage() {
     return (
-        <section id="Home" className="relative h-screen flex overflow-x-hidden">
+        <section
+            id="Home"
+            className="relative h-screen flex overflow-x-hidden z-20"
+        >
             <Image
                 src={"/homepageBg.jpg"}
                 alt="homepage background"
@@ -26,7 +29,7 @@ export function Homepage() {
                 </h1>
                 <div>
                     <p className="text-3xl py-4 w-fit ">
-                        I AM A <Typewriter />
+                        {/* I AM A <Typewriter /> */}
                     </p>
                     <Link
                         href="#Contacts"

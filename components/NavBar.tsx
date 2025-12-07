@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
 import Link from "next/link";
 
+export const links = ["Home", "About", "Skills", "Projects", "Contacts"];
+
 export default function NavBar() {
     const navRef = useRef<null | HTMLElement>(null);
     const titleRef = useRef<null | HTMLAnchorElement>(null);
@@ -11,8 +13,6 @@ export default function NavBar() {
     const [isClient, setIsClient] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
-
-    const links = ["Home", "About", "Skills", "Projects", "Contacts"];
 
     // Detect mobile + run sticky observer
     useEffect(() => {
@@ -108,6 +108,7 @@ export default function NavBar() {
                                 href={`#${link}`}
                                 className="navLink"
                                 key={index}
+                                data-section={link}
                             >
                                 <span title={link}>{link}</span>
                             </Link>

@@ -3,6 +3,7 @@ import { FaArrowRight, FaChevronDown } from "react-icons/fa";
 import { rc_bold } from "@/app/fonts";
 import Image from "next/image";
 import Link from "next/link";
+import Particles from "./Particles";
 
 export function Homepage() {
     return (
@@ -10,6 +11,18 @@ export function Homepage() {
             id="Home"
             className="relative h-screen flex overflow-x-hidden z-20"
         >
+            <div className="absolute top-1/2 left-1/2 -translate-1/2 w-full h-full z-10">
+                <Particles
+                    particleColors={["#ffffff", "#089898"]}
+                    particleCount={50}
+                    particleSpread={8}
+                    speed={0.15}
+                    particleBaseSize={250}
+                    moveParticlesOnHover={true}
+                    alphaParticles={false}
+                    disableRotation={false}
+                />
+            </div>
             <Image
                 src={"/homepageBg.jpg"}
                 alt="homepage background"
@@ -19,7 +32,7 @@ export function Homepage() {
             />
             <div
                 className={
-                    "absolute left-[5%] lg:left-[60%] top-[25%] w-full lg:w-fit z-10 text-white"
+                    "absolute left-[5%] lg:left-[60%] top-[25%] lg:w-[300px] rounded-md lg:backdrop-brightness-70 lg:backdrop-blur-sm z-10 text-white lg:p-2"
                 }
             >
                 <h1 className={"text-4xl leading-tight w-fit "}>
@@ -29,7 +42,7 @@ export function Homepage() {
                 </h1>
                 <div>
                     <p className="text-3xl py-4 w-fit ">
-                        {/* I AM A <Typewriter /> */}
+                        I AM A <Typewriter />
                     </p>
                     <Link
                         href="#Contacts"

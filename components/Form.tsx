@@ -35,7 +35,7 @@ export default function Form() {
     return (
         <div
             ref={formContainerRef}
-            className="relative md:top-[120px] mx-auto w-full md:w-[450px] xl:w-full max-w-[520px] my-auto"
+            className="relative md:top-[60px] mx-auto w-full md:w-[450px] xl:w-full max-w-[520px] my-auto"
             onMouseEnter={() => setIsExpanded(true)}
             onMouseLeave={() => {
                 // Check if any input inside the form is focused

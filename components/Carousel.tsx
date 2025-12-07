@@ -6,33 +6,33 @@ import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 
 const cardInfos = [
     {
-        front: "https://picsum.photos/300/300?random=1",
-        back: "https://picsum.photos/300/300?random=2",
+        front: "https://picsum.photos/id/10/300/300",
+        back: "https://picsum.photos/id/20/300/300",
         title: "Project 1",
     },
     {
-        front: "https://picsum.photos/300/300?random=3",
-        back: "https://picsum.photos/300/300?random=4",
+        front: "https://picsum.photos/id/30/300/300",
+        back: "https://picsum.photos/id/40/300/300",
         title: "Project 2",
     },
     {
-        front: "https://picsum.photos/300/300?random=5",
-        back: "https://picsum.photos/300/300?random=6",
+        front: "https://picsum.photos/id/50/300/300",
+        back: "https://picsum.photos/id/60/300/300",
         title: "Project 3",
     },
     {
-        front: "https://picsum.photos/300/300?random=1",
-        back: "https://picsum.photos/300/300?random=1",
+        front: "https://picsum.photos/id/70/300/300",
+        back: "https://picsum.photos/id/80/300/300",
         title: "Project 4",
     },
     {
-        front: "https://picsum.photos/300/300?random=1",
-        back: "https://picsum.photos/300/300?random=1",
+        front: "https://picsum.photos/id/90/300/300",
+        back: "https://picsum.photos/id/100/300/300",
         title: "Project 5",
     },
     {
-        front: "https://picsum.photos/300/300?random=1",
-        back: "https://picsum.photos/300/300?random=1",
+        front: "https://picsum.photos/id/110/300/300",
+        back: "https://picsum.photos/id/120/300/300",
         title: "Project 6",
     },
 ];
@@ -195,7 +195,7 @@ function Card({
                     <span
                         className="absolute top-1/2 left-1/2 -translate-1/2 text-white text-2xl font-bold pointer-events-none"
                         style={{
-                            transform: "translateZ(60px)",
+                            transform: "translateZ(70px)",
                             textShadow: "0 4px 8px rgba(0,0,0,0.9)",
                         }}
                     >
@@ -219,7 +219,7 @@ function Card({
                     <div
                         className="absolute top-1/2 left-1/2 -translate-1/2"
                         style={{
-                            transform: "translateZ(-60px) rotateY(180deg)",
+                            transform: "translateZ(-70px) rotateY(180deg)",
                         }}
                     >
                         <div className="visitButton relative px-0.5 rounded-xl overflow-hidden group">

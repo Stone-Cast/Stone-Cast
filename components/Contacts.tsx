@@ -11,7 +11,7 @@ export default function Contacts() {
                 <span className="relative md:left-[5%] xl:left-[10%] ">
                     Send a message
                     <Image
-                        src={"/paper-plane.png"}
+                        src={"/paper-plane.webp"}
                         width={600}
                         height={600}
                         alt="paper-plane"

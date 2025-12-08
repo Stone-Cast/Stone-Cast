@@ -51,14 +51,14 @@ export default function Form() {
             }}
         >
             <Image
-                src={"/letter-before.png"}
+                src={"/letter-before.webp"}
                 alt="letter's cover."
                 width={100}
                 height={100}
                 className=" absolute bottom-35 left-1/2 -translate-x-1/2 w-[102%] max-w-[520px] pointer-events-none"
             />
             <Image
-                src={"/letter-after.png"}
+                src={"/letter-after.webp"}
                 alt="letter's cover. cover letter? ahaha!"
                 width={300}
                 height={100}

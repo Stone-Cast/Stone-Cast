@@ -24,7 +24,7 @@ export function Homepage() {
                 />
             </div>
             <Image
-                src="/homepageBg.jpg"
+                src="/homepageBg.webp"
                 alt="homepage background"
                 fill
                 priority
@@ -33,6 +33,7 @@ export function Homepage() {
                 className="absolute pointer-events-none"
                 unoptimized={true}
             />
+            <div className="absolute w-full h-full bg-gradient-to-b from-transparent from-30% to-[var(--custom-grey)] inset-0"></div>
 
             <div
                 className={

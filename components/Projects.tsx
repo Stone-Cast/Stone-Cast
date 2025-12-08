@@ -6,7 +6,7 @@ export default function Projects() {
     return (
         <section
             id="Projects"
-            className="projects relative bg-[url('../public/homepageBg.jpg')] bg-no-repeat bg-cover bg-fixed bg-center md:-mt-[208px] lg:-scroll-mt-30 overflow-x-clip z-10"
+            className="projects relative bg-[url('../public/homepageBg.webp')] bg-no-repeat bg-cover bg-fixed bg-center md:-mt-[208px] lg:-scroll-mt-30 overflow-x-clip z-10"
         >
             <div
                 className={

@@ -36,7 +36,7 @@ export default function AnimatedProfileImage() {
         >
             <div className="relative w-fit h-fit ml-[15%] md:ml-[30%] lg:ml-[10%] xl:mx-auto">
                 <Image
-                    src={"/picFrame.jpg"}
+                    src={"/picFrame.webp"}
                     width={frameWidth}
                     height={frameWidth}
                     alt="picture frame"
@@ -52,7 +52,7 @@ export default function AnimatedProfileImage() {
                     }`}
                 >
                     <Image
-                        src={"/proPic.jpg"}
+                        src={"/proPic.webp"}
                         alt="profile picture"
                         fill
                         className={`object-cover md:pointer-events-none transition-all duration-700 ${

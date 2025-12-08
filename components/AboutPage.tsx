@@ -52,8 +52,11 @@ export default function AboutPage() {
                                 <div className="absolute top-1/2 left-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-[linear-gradient(0deg,var(--custom-cyan),transparent_90%)]"></div>
                             </div>
                             <Link
-                                href={""}
+                                href={
+                                    "https://drive.google.com/file/d/1_jLGqCo5LejuREVZ2nLJyKdHzCT7nljo/view?usp=drive_link"
+                                }
                                 className="relative z-10 block bg-[var(--custom-grey)] p-3 md:p-5"
+                                target="_blank"
                             >
                                 Download CV
                             </Link>

@@ -24,12 +24,15 @@ export function Homepage() {
                 />
             </div>
             <Image
-                src={"/homepageBg.jpg"}
+                src="/homepageBg.jpg"
                 alt="homepage background"
                 fill
-                objectFit="cover"
+                priority
+                quality={100}
+                style={{ objectFit: "cover" }}
                 className="absolute pointer-events-none"
             />
+
             <div
                 className={
                     "absolute left-[5%] lg:left-[60%] top-[25%] lg:w-[300px] rounded-md lg:backdrop-brightness-70 lg:backdrop-blur-sm z-10 text-white lg:p-2"

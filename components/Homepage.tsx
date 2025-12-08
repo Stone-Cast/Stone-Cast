@@ -31,6 +31,7 @@ export function Homepage() {
                 quality={100}
                 style={{ objectFit: "cover" }}
                 className="absolute pointer-events-none"
+                unoptimized={true}
             />
 
             <div

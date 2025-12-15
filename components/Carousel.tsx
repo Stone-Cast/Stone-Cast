@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 
@@ -8,32 +9,38 @@ const cardInfos = [
     {
         front: "https://picsum.photos/id/10/300/300",
         back: "https://picsum.photos/id/20/300/300",
-        title: "Project 1",
+        title: "URL Shortener",
+        redirectTo: "https://urlshortener-three-lemon.vercel.app/",
     },
     {
         front: "https://picsum.photos/id/30/300/300",
         back: "https://picsum.photos/id/40/300/300",
-        title: "Project 2",
+        title: "MovieList",
+        redirectTo: "https://movie-list-ten-jade.vercel.app/",
     },
     {
         front: "https://picsum.photos/id/50/300/300",
         back: "https://picsum.photos/id/60/300/300",
-        title: "Project 3",
+        title: "Pomofocus Clone",
+        redirectTo: "https://pomofocus-clone-sage.vercel.app/",
     },
     {
         front: "https://picsum.photos/id/70/300/300",
         back: "https://picsum.photos/id/80/300/300",
         title: "Project 4",
+        redirectTo: "https://www.example.com",
     },
     {
         front: "https://picsum.photos/id/90/300/300",
         back: "https://picsum.photos/id/100/300/300",
         title: "Project 5",
+        redirectTo: "https://www.example.com",
     },
     {
         front: "https://picsum.photos/id/110/300/300",
         back: "https://picsum.photos/id/120/300/300",
         title: "Project 6",
+        redirectTo: "https://www.example.com",
     },
 ];
 
@@ -143,14 +150,17 @@ export default function App() {
                                 }
                             `}
                     </style>
-                    {cardInfos.map(({ front, back, title }, index) => (
-                        <Card
-                            key={index}
-                            front={front}
-                            back={back}
-                            title={title}
-                        />
-                    ))}
+                    {cardInfos.map(
+                        ({ front, back, title, redirectTo }, index) => (
+                            <Card
+                                key={index}
+                                front={front}
+                                back={back}
+                                title={title}
+                                redirectTo={redirectTo}
+                            />
+                        )
+                    )}
                 </div>
 
                 {/* Right Button */}
@@ -169,10 +179,12 @@ function Card({
     front,
     back,
     title,
+    redirectTo,
 }: {
     front: string;
     back: string;
     title: string;
+    redirectTo: string;
 }) {
     const [isFlipped, setIsFlipped] = useState(false);
     return (
@@ -193,7 +205,7 @@ function Card({
                     after:absolute after:content-[''] after:w-full after:h-full after:bg-black/40 after:rounded-xl after:[transform:translateZ(-2px)]`}
                 >
                     <span
-                        className="absolute top-1/2 left-1/2 -translate-1/2 text-white text-2xl font-bold pointer-events-none"
+                        className="absolute top-1/2 left-1/2 -translate-1/2 text-white text-2xl font-bold text-center pointer-events-none"
                         style={{
                             transform: "translateZ(70px)",
                             textShadow: "0 4px 8px rgba(0,0,0,0.9)",
@@ -224,7 +236,9 @@ function Card({
                     >
                         <div className="visitButton relative px-0.5 rounded-xl overflow-hidden group">
                             <button className="relative z-10 bg-[var(--custom-cyan)] text-2xl font-bold text-white px-10 py-2 rounded-xl duration-800 group-hover:bg-transparent cursor-pointer">
-                                VISIT
+                                <Link target="_blank" href={redirectTo}>
+                                    VISIT
+                                </Link>
                             </button>
                         </div>
                     </div>

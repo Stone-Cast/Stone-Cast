@@ -52,13 +52,13 @@ export default function AnimatedProfileImage() {
                     }`}
                 >
                     <Image
-                        src={"/proPic.webp"}
+                        src={"/proPic2.webp"}
                         alt="profile picture"
                         fill
                         className={`object-cover md:pointer-events-none transition-all duration-700 ${
                             isExpanded
                                 ? "rotate-y-0 shadow-none"
-                                : "-rotate-y-22 shadow-[5px_5px_5px_1px_rgba(0,0,0,0.9)]"
+                                : "-rotate-y-22 shadow-none " // replace shadow-none with shadow-[5px_5px_5px_1px_rgba(0,0,0,0.9)] if needed.
                         }`}
                         unoptimized={true}
                     />
